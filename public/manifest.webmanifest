@@ -3,8 +3,11 @@
   "short_name": "FreeCalc",
   "description": "Free, fast calculators for everyday life.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#08130e",
   "theme_color": "#08130e",
-  "icons": []
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
 }
