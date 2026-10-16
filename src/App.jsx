@@ -45,7 +45,7 @@ const groups=['All tools','Money','Everyday','Dates & time','Home & health'];
 function App(){
  const [path,setPath]=useState(location.pathname),[query,setQuery]=useState(''),[group,setGroup]=useState('All tools'),[installPrompt,setInstallPrompt]=useState(null),[menu,setMenu]=useState(false);
  useEffect(()=>{const pop=()=>setPath(location.pathname);window.addEventListener('popstate',pop);const before=e=>{e.preventDefault();setInstallPrompt(e)};window.addEventListener('beforeinstallprompt',before);return()=>{window.removeEventListener('popstate',pop);window.removeEventListener('beforeinstallprompt',before)}},[]);
- const go=p=>{history.pushState({},'',p);setPath(p);setMenu(false);window.scrollTo({top:0,behavior:'instant'})};
+ const go=p=>{history.pushState({},'',p);setPath(location.pathname);setMenu(false);if(p.includes('#')){requestAnimationFrame(()=>document.getElementById(p.split('#')[1])?.scrollIntoView({behavior:'smooth'}))}else window.scrollTo({top:0,behavior:'instant'})};
  const active=tools.find(t=>path==='/'+t.id);
  const filtered=tools.filter(t=>(group==='All tools'||t.group===group)&&(t.name+' '+t.desc+' '+t.group).toLowerCase().includes(query.toLowerCase()));
  const install=async()=>{if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;setInstallPrompt(null)}else if('serviceWorker'in navigator){alert('To install FreeCalc, use your browser menu and choose “Install app” or “Add to Home Screen”.')}else alert('Use your browser menu to add this page to your home screen.')};
