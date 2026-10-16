@@ -1,13 +1,30 @@
 {
   "name": "FreeCalc — Life Calculator",
   "short_name": "FreeCalc",
-  "description": "Free, fast calculators for everyday life.",
+  "description": "Free, fast calculators for money, dates, home and everyday life.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#08130e",
   "theme_color": "#08130e",
+  "categories": [
+    "utilities",
+    "finance",
+    "productivity"
+  ],
   "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    {
+      "src": "/apple-touch-icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
   ]
 }
