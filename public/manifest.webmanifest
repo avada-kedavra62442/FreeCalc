@@ -1,0 +1,10 @@
+{
+  "name": "FreeCalc — Life Calculator",
+  "short_name": "FreeCalc",
+  "description": "Free, fast calculators for everyday life.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08130e",
+  "theme_color": "#08130e",
+  "icons": []
+}
